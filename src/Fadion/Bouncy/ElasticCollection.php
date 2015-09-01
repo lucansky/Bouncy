@@ -130,4 +130,15 @@ class ElasticCollection extends Collection {
         return $shards;
     }
 
+    /**
+     * Get an array with the values of a given key. Defaults to 'id'.
+     *
+     * @param string $value
+     * @param null $key
+     * @return array
+     */
+    public function pluck($value = 'id', $key = NULL)
+    {
+        return Arr::pluck($this->items, $value, $key);
+    }
 }
